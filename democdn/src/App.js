@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-// import Cee from './hello.esm';
+import Cee from './hello.esm';
 import { useEffect } from 'react';
 
 
@@ -9,7 +9,7 @@ function App() {
   // const CeeComponent = Cee.ReactCom;
 
   useEffect(() => {
-    window.Cee.hello('cee');
+    Cee.hello('cee');
     // Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
   }, []);
 
