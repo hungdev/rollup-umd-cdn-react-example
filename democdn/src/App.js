@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 
 function App() {
   useEffect(() => {
-    window.Cee.hello('cee');
-    window.Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
+    Cee.hello('cee');
+    Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
   }, []);
 
   return (
