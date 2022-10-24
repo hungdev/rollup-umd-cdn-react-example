@@ -9,7 +9,10 @@ function App() {
   // const CeeComponent = Cee.ReactCom;
 
   useEffect(() => {
-    window.Cee.hello('cee');
+    /* dont need window. prefix here, because we already have the script in index.html
+      <script> const global = globalThis;</script>
+    */
+    Cee.hello('cee');
     // Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
   }, []);
 
