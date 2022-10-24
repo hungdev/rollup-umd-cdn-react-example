@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-// import Cee from 'Cee';
+// import Cee from './hello.esm';
 import { useEffect } from 'react';
 
 
 function App() {
 
-  const CeeComponent = Cee.ReactCom;
+  // const CeeComponent = Cee.ReactCom;
 
   useEffect(() => {
-    Cee.hello('cee');
-    Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
+    window.Cee.hello('cee');
+    // Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
   }, []);
 
   return (
@@ -29,7 +29,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <CeeComponent />
+      {/* <CeeComponent /> */}
     </div>
   );
 }

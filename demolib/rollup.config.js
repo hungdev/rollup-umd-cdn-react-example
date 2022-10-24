@@ -18,7 +18,7 @@ export default {
       // Build cho môi trường sử dụng ES modules.
       name: 'Cee',
       file: 'dist/hello.esm.js',
-      format: 'es',
+      format: 'esm',
     },
     {
       // Build cho môi trường Node.js và trình duyệt.
@@ -27,7 +27,7 @@ export default {
       format: 'umd',
     },
   ],
-  external: ["react"],
+  external: ["react", "axios"],
   // external: [...Object.keys(pkg.peerDependencies || {})],
   // globals: {
   //   'react': 'React',
