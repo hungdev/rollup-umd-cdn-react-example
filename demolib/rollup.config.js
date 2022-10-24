@@ -1,6 +1,7 @@
 import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve as resolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+// import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 import pkg from './package.json';
 
@@ -26,6 +27,12 @@ export default {
       format: 'umd',
     },
   ],
+  external: ["react"],
+  // external: [...Object.keys(pkg.peerDependencies || {})],
+  // globals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM'
+  // },
   plugins: [
     // babel({
     //   exclude: 'node_modules/**',

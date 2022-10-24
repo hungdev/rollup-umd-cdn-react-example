@@ -1,8 +1,12 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Cee = factory());
-})(this, (function () { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react')) :
+    typeof define === 'function' && define.amd ? define(['react'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Cee = factory(global.React));
+})(this, (function (React) { 'use strict';
+
+    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+    var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -3034,10 +3038,17 @@
         return Promise.reject((error === null || error === void 0 ? void 0 : error.response) || error);
     });
 
+    function ReactCom() {
+        React.useEffect(function () {
+            console.log('ReactCom Logged');
+        }, []);
+        return (React__default["default"].createElement("div", null, " ReactCom "));
+    }
+
     var hello = function (name) {
         console.log("Hello ".concat(name, "!"));
     };
-    var index = { hello: hello, apiHandler: axiosInstance };
+    var index = { hello: hello, apiHandler: axiosInstance, ReactCom: ReactCom };
 
     return index;
 

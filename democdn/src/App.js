@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 
 
 function App() {
+
+  const CeeComponent = Cee.ReactCom;
+
   useEffect(() => {
     Cee.hello('cee');
     Cee.apiHandler.get('https://reactnative.dev/movies.json').then(res => console.log('res', res));
@@ -26,6 +29,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <CeeComponent />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -3028,9 +3030,16 @@ axiosInstance.interceptors.response.use(function (response) {
     return Promise.reject((error === null || error === void 0 ? void 0 : error.response) || error);
 });
 
+function ReactCom() {
+    useEffect(function () {
+        console.log('ReactCom Logged');
+    }, []);
+    return (React.createElement("div", null, " ReactCom "));
+}
+
 var hello = function (name) {
     console.log("Hello ".concat(name, "!"));
 };
-var index = { hello: hello, apiHandler: axiosInstance };
+var index = { hello: hello, apiHandler: axiosInstance, ReactCom: ReactCom };
 
 export { index as default };
